@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Abril%20Fatface);
+  @import url(https://fonts.googleapis.com/css?family=Work+Sans);
+  @import url(https://fonts.googleapis.com/css?family=Playfair%20Display);
+  
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: rgb(27, 27, 50);
+    background-image: linear-gradient(
+        0deg,
+        rgba(5127, 19, 121, 0.5),
+        rgba(115, 115, 206, 0.7)), url(https://pixabay.com/get/g3b89620f9716a6401615f4da2fe6b0b459230762f9b645eefb51a5ecb33f53e8570754cee4689353ab9430d049524f91.jpg);
+      
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  body {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: white;
+    margin: 0;
+  }
+  
+  .main {
+    text-align: left;
+  }
+  
+  .header {
+    text-align: center;
+    }
+  #title {
+    font-family: 'Abril Fatface';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 4.0rem;
+    color: #FFFFFF ;
+    line-height: 1;
+    }
+  #description {
+    font-family: arial;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    
+  }
+  
+  #survey-form {
+    background:  rgba(49, 48, 72, 0.75);
+    padding: 2.5rem 0.625rem;
+    border-radius: 1rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    
+  }
+  
+  label {
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  input,
+  button,
+  select,
+  textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+  
+  
+  #submit {
+    display: block;
+    width: 80%;
+    padding: 1.45rem;
+    background: #499A39;
+    color: white;
+    border-radius: 7px;
+    margin-left: 100px;
+    font-size: 20px;
+    margin-top: 2rem;
+  }
+  
+  .info {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    color: #EDEDED;
+  }
+  
+  #comments {
+    min-height: 5rem;
+    max-height: 20rem;
+    width: 55rem;
+    padding: 0.625rem;
+    margin-left: 3rem;
+    line-height: 1.5;
+    font-family: 'Playfair Display' ,arial;
+    font-size: 20px;
+    resize: vertical;
+    border: 1.25px;
+    border-radius: 1.25rem;
+  }
+  
+  .form-field {
+    display: block;
+    width: 95%;
+    height: 2.5rem;
+    padding: 0.5rem 0.8rem;
+    color: #61686F;
+    background-color: #FFFFFF;
+    border: 1.25px solid #000000;
+    border-radius: 1.25rem;
+  }
+  
+  p {
+    font-size: 2rem;
+    line-height: 0.5;
+  }
+  
+  .radio-input,
+  .checkbox-input {
+    display: inline-block;
+    margin-right: 0.625rem;
+    min-height: 1.25rem;
+    min-width: 1.25rem;
+  }
+  
+  </style>
+<body>
+    <main class="main">
+  
+        <header class="header">
+          <h1 id="title">Website Survey</h1>
+          <p id="description"><u>Please fill the following informations and help us improve your exprience.</u></p>
+        </header>
+        
+        <form id="survey-form" action="https://formspree.io/f/xvolvjpd" method="POST">
+          
+          <div class"form-section">
+            <label id="name-label" for="name"><p>Name</p></label>
+            <input 
+              type="text"
+              name="name"
+              id="name"
+              class="form-field"
+              placeholder="Please enter your name"
+              required
+            />
+          </div>
+          
+          <div class"form-section">
+            <label id="email-label" for="email"><p>E-mail</p></label>
+            <input 
+              type="email"
+              name="email"
+              id="email"
+              class="form-field"
+              placeholder="Please enter your E-mail address"
+              required
+            />
+          </div>
+          
+          <div class"form-section">
+            <label id="number-label" for="age"><p>Age</p> <span class="info">(optional)</span></label>
+            <input 
+              type="number"
+              name="age"
+              id="number"
+              min="1"
+              max="99"
+              class="form-field"
+              placeholder="Please enter your Age"
+              required
+            />
+          
+          </div>
+          
+          <div class="form-section">
+            <p>Which option best describes your current role?</p>
+            <select id="dropdown" name="role" class="form-field" required>
+              <option disabled selected value>Select current role</option>
+              <option value="student">Student</option>
+              <option value="managers">Managers</option>
+              <option value="professionals">Professionals</option>
+              <option value="technicians">Technicians and associate professionals</option>
+              <option value="support">Clerical support workers</option>
+              <option value="service">Service and sales workers </option>
+              <option value="skilled">Skilled agricultural, forestry and fishery workers</option>
+              <option value="craft">Craft and related trades workers</option>
+              <option value="operators">Plant and machine operators, and assemblers</option>
+              <option value="elementary">Elementary occupations</option>
+              <option value="army">Armed forces occupations </option>
+              <option value="cns">Prefer not to say</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-section">
+            <p>How did you hear about this website?</p>
+            <label><input
+                name="website"
+                value="social"
+                type="radio"
+                class="radio-input"
+                required
+              />Social Media</label>
+            <label><input
+                name="website"
+                value="ad"
+                type="radio"
+                class="radio-input"
+              />Advertising</label>
+            <label><input
+                name="website"
+                value="search"
+                type="radio"
+                class="radio-input"
+              />Search Engine</label>
+            <label><input
+                name="website"
+                value="friend"
+                type="radio"
+                class="radio-input"
+              />Friend</label>
+            <label><input
+                name="website"
+                value="other"
+                type="radio"
+                class="radio-input"
+              />Other</label>
+          </div>
+          
+          <div class="form-section">
+            <p>Which of the following devices do you own? <span class="info">(Check all that you own)</span></p>
+      
+            <label><input
+                name="device"
+                value="desktop"
+                type="checkbox"
+                class="checkbox-input"
+                required
+              />Desktop</label>
+            <label><input
+                name="device"
+                value="laptop"
+                type="checkbox"
+                class="checkbox-input"
+              />Laptop</label>
+            <label><input
+                name="device"
+                value="android"
+                type="checkbox"
+                class="checkbox-input"
+              />Android</label>
+            <label><input
+                name="device"
+                value="apple"
+                type="checkbox"
+                class="checkbox-input"
+              />iPad/iPhone</label>
+            <label><input
+                name="device"
+                value="other"
+                type="checkbox"
+                class="checkbox-input"
+              />Other</label>
+          <div class="form-section">
+            <p>What browser do you use?</p>
+            <label><input
+                name="browser"
+                value="chrome"
+                type="radio"
+                class="radio-input"
+                required
+              />Google Chrome</label>
+            <label><input
+                name="browser"
+                value="firefox"
+                type="radio"
+                class="radio-input"
+              />Firefox</label>
+            <label><input
+                name="browser"
+                value="edge"
+                type="radio"
+                class="radio-input"
+              />Microsoft Edge</label>
+            <label><input
+                name="browser"
+                value="safari"
+                type="radio"
+                class="radio-input"
+              />Safari</label>
+            <label><input
+                name="browser"
+                value="opera"
+                type="radio"
+                class="radio-input"
+              />Opera</label>
+            <label><input
+                name="browser"
+                value="other"
+                type="radio"
+                class="radio-input"
+              />Other</label>
+            
+          </div>
+          <div class="form-section">
+            <p>Are you satisfied that you found out the website?</p>
+            <label><input
+                name="ratting"
+                value="5-star"
+                type="radio"
+                class="radio-input"
+                required
+              />Very Satisfied</label>
+            <label><input
+                name="ratting"
+                value="4-star"
+                type="radio"
+                class="radio-input"
+              />Satisfied</label>
+            <label><input
+                name="ratting"
+                value="3-star"
+                type="radio"
+                class="radio-input"
+              />Neutral</label>
+            <label><input
+                name="ratting"
+                value="2-star"
+                type="radio"
+                class="radio-input"
+              />Unsatisfied</label>
+            <label><input
+                name="ratting"
+                value="1-star"
+                type="radio"
+                class="radio-input"
+              />Very Unsatisfied</label>
+          </div>
+          
+          <div class="form-section">
+            <p>Any comments or suggestions?</p>
+            <textarea
+              id="comments"
+              class="textarea-input"
+              name="comment"
+              placeholder="Enter your comment/suggestion here..."
+            ></textarea>
+          </div>
+          <div class="form-section">
+            <button type="submit" id="submit" class="submit">Submit</button>
+          </div>
+        </form>
+      </main>
+</body>
+</html>
